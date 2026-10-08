@@ -1,0 +1,236 @@
+/* ── shimmer block ── */
+.block {
+  background: linear-gradient(
+    90deg,
+    rgba(30, 30, 30, 0.06) 25%,
+    rgba(30, 30, 30, 0.12) 50%,
+    rgba(30, 30, 30, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite ease-in-out;
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+.rounded {
+  border-radius: 50%;
+}
+
+@keyframes shimmer {
+  0%   { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+/* ── Hero skeleton ── */
+.heroWrap {
+  min-height: 100svh;
+  padding: calc(clamp(3rem, 7vw, 8rem) + 5rem) clamp(1rem, 5vw, 2rem) clamp(3rem, 7vw, 8rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.heroLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.heroBtns {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.heroRight {
+  aspect-ratio: 3 / 4;
+  background: rgba(30, 30, 30, 0.06);
+  overflow: hidden;
+}
+
+/* ── About skeleton ── */
+.aboutWrap {
+  padding: clamp(3rem, 7vw, 8rem) clamp(1rem, 5vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: start;
+}
+
+.aboutLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.aboutRight {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1px;
+  background: rgba(30, 30, 30, 0.06);
+  border: 1px solid rgba(30, 30, 30, 0.06);
+}
+
+.pillarSkel {
+  padding: 2rem 1.75rem;
+  background: #2B2D27;
+  display: flex;
+  flex-direction: column;
+}
+
+/* override shimmer color for dark bg */
+.pillarSkel .block {
+  background: linear-gradient(
+    90deg,
+    rgba(250, 250, 250, 0.06) 25%,
+    rgba(250, 250, 250, 0.12) 50%,
+    rgba(250, 250, 250, 0.06) 75%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.6s infinite ease-in-out;
+}
+
+/* ── Brands skeleton ── */
+.brandsWrap {
+  padding: clamp(3rem, 7vw, 8rem) clamp(1rem, 5vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.brandsHeader {
+  margin-bottom: 4rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.brandsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(30, 30, 30, 0.1);
+  border: 1px solid rgba(30, 30, 30, 0.1);
+}
+
+.cardSkel {
+  background: #EFECE6;
+  padding: 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.cardSkelTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ── Speaking skeleton ── */
+.speakingWrap {
+  padding: clamp(3rem, 7vw, 8rem) clamp(1rem, 5vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+.speakingLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.speakingRight {
+  background: #EFECE6;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.topicSkel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid rgba(30, 30, 30, 0.08);
+}
+
+.topicSkel:last-child {
+  border-bottom: none;
+}
+
+/* ── Contact skeleton ── */
+.contactWrap {
+  padding: clamp(3rem, 7vw, 8rem) clamp(1rem, 5vw, 2rem);
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.pathsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: rgba(30, 30, 30, 0.1);
+  border: 1px solid rgba(30, 30, 30, 0.1);
+  margin-top: 3rem;
+}
+
+.pathSkel {
+  background: #EFECE6;
+  padding: 2rem 1.75rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .brandsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .pathsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .heroWrap,
+  .aboutWrap,
+  .speakingWrap {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .heroRight {
+    aspect-ratio: 16 / 9;
+    order: -1;
+  }
+
+  .aboutRight {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .speakingRight {
+    padding: 2rem;
+  }
+}
+
+@media (max-width: 560px) {
+  .brandsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .pathsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .aboutRight {
+    grid-template-columns: 1fr;
+  }
+}

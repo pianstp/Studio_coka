@@ -1,0 +1,260 @@
+.hero {
+  min-height: 100svh;
+  padding: calc(var(--section-pad) + 5rem) var(--px) var(--section-pad);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+
+.inner {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 500;
+}
+
+.headline {
+  font-family: var(--font-serif);
+  font-size: clamp(2.8rem, 5.5vw, 5.75rem);
+  font-weight: 300;
+  line-height: 1.05;
+  letter-spacing: -0.01em;
+  color: var(--text);
+}
+
+.headline em {
+  font-style: italic;
+  color: var(--accent);
+}
+
+.sub {
+  font-size: clamp(0.9rem, 2vw, 1.05rem);
+  color: var(--text-light);
+  line-height: 1.8;
+  max-width: 44ch;
+}
+
+.ctas {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-top: 0.75rem;
+}
+
+.btnPrimary {
+  padding: 0.9rem 2rem;
+  min-height: 44px;
+  background: var(--text);
+  color: var(--white);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnPrimary::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btnPrimary:hover::after {
+  transform: scaleX(1);
+}
+
+.btnGhost {
+  padding: 0.9rem 2rem;
+  min-height: 44px;
+  border: 1px solid var(--text);
+  color: var(--text);
+  font-size: 0.8rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  font-weight: 500;
+  white-space: nowrap;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  transition: color 0.3s, border-color 0.3s;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btnGhost::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--accent);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: -1;
+}
+
+.btnGhost:hover {
+  border-color: var(--accent);
+  color: var(--white);
+}
+
+.btnGhost:hover::after {
+  transform: scaleX(1);
+}
+
+.imageWrap {
+  position: relative;
+}
+
+.heroImg {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+.badge {
+  position: absolute;
+  bottom: -1.5rem;
+  left: -1.5rem;
+  background: var(--accent);
+  color: var(--white);
+  padding: 1.25rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+}
+
+.badge span {
+  font-family: var(--font-serif);
+  font-size: 2.5rem;
+  font-weight: 300;
+  line-height: 1;
+}
+
+.badge small {
+  font-size: 0.65rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  opacity: 0.85;
+}
+
+/* ── Tablet 900px ── */
+@media (max-width: 900px) {
+  .hero {
+    gap: 2.5rem;
+  }
+
+  .badge {
+    padding: 1rem 1.25rem;
+  }
+
+  .badge span {
+    font-size: 2rem;
+  }
+}
+
+/* ── Mobile 768px ── */
+@media (max-width: 768px) {
+  .hero {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    min-height: auto;
+    padding-top: calc(var(--section-pad) + 4rem);
+    padding-bottom: calc(var(--section-pad) * 1.5);
+  }
+
+  .imageWrap {
+    order: -1;
+  }
+
+  .heroImg {
+    aspect-ratio: 3 / 2;
+    object-position: center 15%;
+  }
+
+  .badge {
+    bottom: -1rem;
+    left: auto;
+    right: 0;
+  }
+
+  .sub {
+    max-width: 100%;
+  }
+}
+
+/* ── Small mobile 480px ── */
+@media (max-width: 480px) {
+  .hero {
+    padding-top: calc(var(--section-pad) + 3.5rem);
+    gap: 1.75rem;
+  }
+
+  .headline {
+    font-size: clamp(2.4rem, 10vw, 3.2rem);
+  }
+
+  .eyebrow {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+  }
+
+  .ctas {
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .btnPrimary,
+  .btnGhost {
+    width: 100%;
+  }
+
+  .badge {
+    padding: 0.85rem 1rem;
+    right: 0;
+  }
+
+  .badge span {
+    font-size: 1.75rem;
+  }
+
+  .badge small {
+    font-size: 0.58rem;
+  }
+}
+
+/* ── Tiny 360px ── */
+@media (max-width: 360px) {
+  .headline {
+    font-size: 2.2rem;
+  }
+
+  .heroImg {
+    aspect-ratio: 4 / 3;
+  }
+}
