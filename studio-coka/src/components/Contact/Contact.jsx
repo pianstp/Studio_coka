@@ -22,6 +22,12 @@ const paths = [
     href: '#',
   },
   {
+    type: 'Young Person / Supporter',
+    action: 'Alive and Free & AKO Alliance',
+    desc: 'Faith, identity, and access to education for young people and those who champion them.',
+    href: '#',
+  },
+  {
     type: 'Curious Visitor',
     action: 'Follow the Journey',
     desc: "Stay connected with Crystal's work, writing, and ideas.",

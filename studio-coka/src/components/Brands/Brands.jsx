@@ -19,6 +19,7 @@ const brands = [
     href: '#',
     image: studioCoka1,
     imageAlt: 'Studio COKA — Nature Home project exterior',
+    featured: true,
   },
   {
     name: 'ELEvated',
@@ -29,6 +30,7 @@ const brands = [
     href: '#',
     image: studioCoka2,
     imageAlt: 'ELEvated — contemporary interior design',
+    featured: true,
   },
   {
     name: 'The Effective Architect',
@@ -39,6 +41,7 @@ const brands = [
     href: '#',
     image: crystalPodcast,
     imageAlt: 'The Effective Architect — podcast and education workspace',
+    featured: true,
   },
   {
     name: 'AKO Alliance',
@@ -107,7 +110,7 @@ export default function Brands() {
           <a
             key={b.name}
             href={b.href}
-            className={`${styles.card} fade-up ${gridIn ? 'visible' : ''} delay-${Math.min(i + 1, 7)}`}
+            className={`${styles.card} ${b.featured ? styles.cardFeatured : ''} fade-up ${gridIn ? 'visible' : ''} delay-${Math.min(i + 1, 7)}`}
             style={{ '--card-accent': b.color }}
           >
             <div className={styles.cardImage}>
