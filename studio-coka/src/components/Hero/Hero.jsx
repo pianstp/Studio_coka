@@ -38,7 +38,7 @@ export default function Hero() {
           alt="Crystal Kizor — Architect and Designer"
           className={styles.heroImg}
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
         />
         <div className={styles.badge}>
           <span>07</span>

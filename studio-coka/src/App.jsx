@@ -59,6 +59,7 @@ export default function App() {
 
   return (
     <div className={styles.page}>
+      <a href="#hero" className="skip-link">Skip to content</a>
       <Navbar />
       <main>
         <Hero />

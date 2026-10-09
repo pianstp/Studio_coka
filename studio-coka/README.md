@@ -12,10 +12,10 @@ The central idea — **“Crystal Kizor builds worlds.”** — connects archite
 
 ### Links
 
-**Live Website:** [Add live link]
-**GitHub Repository:** [Add GitHub link]
+Live Website: https://crystalkizor-xi.vercel.app/
+GitHub Repository: https://github.com/pianstp/Studio_coka
 
----
+
 
 ## Tech Stack
 
@@ -27,7 +27,6 @@ The central idea — **“Crystal Kizor builds worlds.”** — connects archite
 
 No external UI libraries or CSS frameworks were used. All styling is hand-written to maintain complete control over the visual system and responsive behaviour.
 
----
 
 ## Project Structure
 
@@ -269,6 +268,61 @@ An analytics and optimisation strategy covering measurement, user behaviour, con
 The website was designed around the idea that Crystal Kizor's work should not be presented as a collection of disconnected initiatives.
 
 Instead, the experience positions Crystal at the centre and presents each initiative as a different expression of the same underlying philosophy — using architecture, design, education, entrepreneurship, community, and ideas to create meaningful impact.
+
+---
+
+## Developer's Note
+
+I started by carefully reviewing the assessment brief to understand the requirements and the overall direction of the project. Even after getting a general idea of what was expected, I went through the document again because I wanted to understand the design direction more clearly before writing any code. During this process, I took note of the website's flow, color palette, typography, imagery, content, and the different sections that needed to be included.
+
+My main goal was to create a website that presents Crystal Kizor's work and the different initiatives under her brand in a clear and connected way, rather than making them feel like separate entities. I paid attention to the layout and content hierarchy to make the page easy to navigate and visually engaging.
+
+For the technology stack, I chose React.js with Vite for a fast development workflow and reusable components, while CSS Modules helped me organize the styling and avoid conflicts between components. I also used Amazon Q as an AI assistant during development, mainly to support my problem-solving process and help me work through implementation challenges.
+
+Overall, my focus was to translate the brief into a functional, responsive, and visually consistent website while making deliberate decisions throughout the development process.
+
+---
+
+## Part 2 — AI Product Proposal
+
+### TEA Mentor: An AI Career Guide for Architects
+
+**What it does:** TEA Mentor is an AI-powered assistant that helps users find relevant advice from The Effective Architect's existing podcasts, articles, and courses. It provides answers with links to supporting sources and can eventually create personalised 90-day growth plans.
+
+**Who it's for:** Architecture students, young architects, and aspiring studio owners — particularly those who have limited access to professional mentorship.
+
+**The problem:** Valuable advice about pricing projects, finding clients, developing skills, and starting a practice can be difficult to locate across multiple resources. Some young professionals also lack experienced mentors to guide their decisions.
+
+**How it works:** A visitor selects their career stage and asks a question, such as "How do I price my first project?" The assistant searches relevant TEA content, provides a clear answer, links to its sources, and recommends useful resources or next steps.
+
+**Technology:** Claude API for language generation, Supabase with pgvector for storing and retrieving relevant content, and a React interface connected through a Vercel serverless API route. Retrieval-augmented generation (RAG) would help ground responses in TEA's content rather than relying entirely on the model's general knowledge.
+
+**First version:** Start with 20-30 carefully selected transcripts and articles, build the retrieval and response API, and integrate a simple chat interface with source links and feedback buttons. Test with a small group of architects before expanding content and features.
+
+**Limitations and safeguards:** AI responses can still be inaccurate. The assistant should acknowledge when reliable supporting information is unavailable, clearly display sources, and avoid presenting answers as legal, licensing, or structural advice. User data should be protected, with consent obtained before storing personal information. Rate limits and usage caps would help control costs.
+
+---
+
+## Part 3 — Analytics & Improvement
+
+### Measuring Website Performance and Driving Improvement
+
+**What I would track:** Traffic sources, device types, new and returning visitors, engagement with key sections, clicks on brand cards and calls to action, contact-link clicks, enquiry submissions, and Core Web Vitals — particularly on mobile.
+
+**Tools:** Google Analytics 4 for visitor behaviour and conversions, Microsoft Clarity for heatmaps and session recordings, Google Search Console for search performance, and Lighthouse or PageSpeed Insights for performance assessment.
+
+**How I would use the data:** Review results monthly, identify areas where visitors struggle or leave, develop a specific improvement hypothesis, and measure the outcome after making changes. Use usability testing and A/B testing where sufficient traffic is available.
+
+**Scenario: 5,000 visitors but only 5 enquiries.**
+
+The enquiry conversion rate is 0.1%. I would investigate in this order:
+
+1. **Technical issues** — Test the contact process on desktop and mobile, verify that tracking works, and confirm that enquiries are being delivered successfully.
+2. **Traffic quality** — Compare conversion rates across traffic sources to determine whether visitors match the intended audience.
+3. **Visitor behaviour** — Examine scroll depth, click patterns, and session recordings to understand whether visitors discover the relevant information and calls to action.
+4. **Clarity and trust** — Check whether visitors quickly understand Crystal Kizor's work, who the website serves, and what action to take next.
+
+**Next steps:** Fix any technical problems first, then improve unclear messaging, make calls to action more relevant to each audience, and strengthen credibility with project examples or testimonials. If the contact process is difficult, simplify it or introduce a short enquiry form. Monitor results over four weeks and compare with the original conversion rate to determine whether changes improved performance.
 
 ---
 

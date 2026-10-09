@@ -38,17 +38,28 @@ body {
 
 a.skip-link {
   position: absolute;
-  top: -100%;
   left: 1rem;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
   background: var(--accent);
   color: var(--white);
   padding: 0.5rem 1rem;
   font-size: 0.8rem;
   z-index: 999;
-  transition: top 0.2s;
 }
 
 a.skip-link:focus {
+  width: auto;
+  height: auto;
+  overflow: visible;
+  clip: auto;
+  clip-path: none;
+  white-space: normal;
   top: 1rem;
 }
 
