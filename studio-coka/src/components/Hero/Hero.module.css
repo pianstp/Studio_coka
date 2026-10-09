@@ -124,18 +124,50 @@
   transform: scaleX(1);
 }
 
+/* ── Slideshow ── */
 .imageWrap {
   position: relative;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
 }
 
 .heroImg {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  aspect-ratio: 3 / 4;
+  height: 100%;
   object-fit: cover;
   object-position: center top;
   display: block;
 }
 
+@keyframes kenBurns {
+  from { transform: scale(1.06); opacity: 0; }
+  5%   { opacity: 1; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.slideHidden {
+  opacity: 0;
+  z-index: 0;
+}
+
+.slideIn {
+  animation: kenBurns 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  z-index: 2;
+}
+
+.slideOut {
+  animation: fadeOut 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+  z-index: 1;
+}
+
+/* badge */
 .badge {
   position: absolute;
   bottom: -1.5rem;
@@ -147,6 +179,7 @@
   flex-direction: column;
   align-items: center;
   gap: 0.15rem;
+  z-index: 3;
 }
 
 .badge span {
@@ -161,6 +194,33 @@
   letter-spacing: 0.1em;
   text-transform: uppercase;
   opacity: 0.85;
+}
+
+/* dots */
+.dots {
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  display: flex;
+  gap: 0.4rem;
+  z-index: 3;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.45);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, transform 0.3s;
+  min-height: unset;
+}
+
+.dotActive {
+  background: var(--white);
+  transform: scale(1.4);
 }
 
 /* ── Tablet 900px ── */
@@ -190,10 +250,10 @@
 
   .imageWrap {
     order: -1;
+    aspect-ratio: 3 / 2;
   }
 
   .heroImg {
-    aspect-ratio: 3 / 2;
     object-position: center 15%;
   }
 
@@ -254,7 +314,7 @@
     font-size: 2.2rem;
   }
 
-  .heroImg {
+  .imageWrap {
     aspect-ratio: 4 / 3;
   }
 }
